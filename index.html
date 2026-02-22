@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="color-scheme" content="light dark" />
   <title>Jiahui Lv</title>
-  <meta name="description" content="Academic homepage of Jiahui Lv (Ph.D. student at Beihang University)." />
+  <meta name="description" content="Academic homepage of Jiahui Lv." />
   <style>
     :root{
       --bg0:#0b1220;
@@ -15,8 +15,8 @@
       --text:rgba(255,255,255,.92);
       --muted:rgba(255,255,255,.70);
       --line:rgba(255,255,255,.14);
-      --accent:#7dd3fc;   /* sky */
-      --accent2:#a78bfa;  /* violet */
+      --accent:#7dd3fc;
+      --accent2:#a78bfa;
       --shadow: 0 20px 60px rgba(0,0,0,.40);
       --radius:18px;
     }
@@ -36,65 +36,21 @@
     }
 
     *{box-sizing:border-box}
-    html,body{height:100%}
     body{
       margin:0;
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
       color:var(--text);
       background:
-        radial-gradient(900px 500px at 10% -10%, color-mix(in oklab, var(--accent) 26%, transparent) 0%, transparent 60%),
-        radial-gradient(800px 480px at 110% 10%, color-mix(in oklab, var(--accent2) 22%, transparent) 0%, transparent 62%),
+        radial-gradient(900px 520px at 10% -10%, color-mix(in oklab, var(--accent) 26%, transparent) 0%, transparent 60%),
+        radial-gradient(820px 520px at 110% 10%, color-mix(in oklab, var(--accent2) 22%, transparent) 0%, transparent 62%),
         linear-gradient(160deg, var(--bg0), var(--bg1));
       line-height:1.55;
+      min-height:100vh;
     }
 
-    a{color:inherit}
+    .wrap{max-width:920px;margin:0 auto;padding:52px 18px 72px}
+    a{color:inherit;text-decoration:none}
     a:hover{opacity:.92}
-
-    .wrap{
-      max-width: 980px;
-      margin: 0 auto;
-      padding: 44px 18px 64px;
-    }
-
-    .topbar{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:16px;
-      margin-bottom: 18px;
-    }
-    .badge{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      padding:10px 14px;
-      border:1px solid var(--line);
-      border-radius: 999px;
-      background: color-mix(in oklab, var(--card) 70%, transparent);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      box-shadow: var(--shadow);
-      font-size: 14px;
-      color: var(--muted);
-      letter-spacing:.2px;
-    }
-    .dot{
-      width:10px;height:10px;border-radius:999px;
-      background: radial-gradient(circle at 30% 30%, var(--accent), var(--accent2));
-      box-shadow: 0 0 0 4px color-mix(in oklab, var(--accent) 15%, transparent);
-    }
-
-    .grid{
-      display:grid;
-      grid-template-columns: 1.25fr .75fr;
-      gap: 18px;
-      margin-top: 16px;
-    }
-    @media (max-width: 860px){
-      .grid{grid-template-columns:1fr}
-      .topbar{flex-direction:column;align-items:flex-start}
-    }
 
     .card{
       border:1px solid var(--line);
@@ -105,26 +61,31 @@
       box-shadow: var(--shadow);
       overflow:hidden;
     }
-    .card .inner{padding: 22px 22px 18px}
-    .card .inner.tight{padding: 18px 18px 12px}
-
+    .inner{padding:24px}
+    .header{
+      display:flex;
+      gap:18px;
+      align-items:flex-start;
+      justify-content:space-between;
+      flex-wrap:wrap;
+    }
     h1{
-      font-size: clamp(28px, 3.2vw, 40px);
-      margin: 0 0 6px;
-      letter-spacing: -0.5px;
+      margin:0 0 6px;
+      font-size: clamp(30px, 3.2vw, 42px);
+      letter-spacing:-.6px;
     }
     .subtitle{
-      margin: 0 0 14px;
-      color: var(--muted);
+      margin:0;
+      color:var(--muted);
       font-size: 15px;
+      max-width: 58ch;
     }
 
-    .row{
+    .meta{
       display:flex;
       flex-wrap:wrap;
       gap:10px;
-      align-items:center;
-      margin-top: 10px;
+      margin-top:14px;
     }
     .pill{
       display:inline-flex;
@@ -133,59 +94,59 @@
       padding: 8px 10px;
       border-radius: 999px;
       border: 1px solid var(--line);
-      background: color-mix(in oklab, var(--card2) 70%, transparent);
+      background: color-mix(in oklab, var(--card2) 65%, transparent);
       font-size: 13px;
       color: var(--muted);
-      text-decoration:none;
-      transition: transform .12s ease;
+      white-space:nowrap;
     }
-    .pill:hover{transform: translateY(-1px)}
-    .pill strong{color:var(--text);font-weight:600}
-
-    .section-title{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:12px;
-      padding: 14px 18px;
-      border-top:1px solid var(--line);
-      background: color-mix(in oklab, var(--card2) 55%, transparent);
-      font-size: 13px;
-      letter-spacing:.8px;
-      text-transform: uppercase;
-      color: var(--muted);
-    }
-
-    ul{margin: 10px 0 0; padding-left: 18px}
-    li{margin: 6px 0}
-
+    .pill strong{color:var(--text);font-weight:650}
     .k{
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono","Courier New", monospace;
       font-size: 12.5px;
       padding: 2px 6px;
       border-radius: 7px;
       border:1px solid var(--line);
       background: color-mix(in oklab, var(--card2) 55%, transparent);
       color: var(--muted);
-      text-decoration:none;
     }
 
-    .pub{
-      display:flex;
-      flex-direction:column;
-      gap:6px;
-      padding: 14px 18px 16px;
+    .sep{
+      height:1px;background:var(--line);
+      margin:18px 0;
     }
-    .pub .title{font-weight:650}
-    .pub .meta{color:var(--muted); font-size: 13.5px}
-    .pub .links{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
-    .pub .links a{text-decoration:none}
+
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 14px;
+    }
+    @media (max-width: 820px){
+      .grid{grid-template-columns:1fr}
+    }
+
+    .box{
+      border:1px solid var(--line);
+      border-radius: 14px;
+      background: color-mix(in oklab, var(--card2) 55%, transparent);
+      padding: 16px 16px 14px;
+    }
+    .box h2{
+      margin:0 0 8px;
+      font-size: 13px;
+      letter-spacing:.9px;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 650;
+    }
+    ul{margin:0;padding-left:18px}
+    li{margin:6px 0}
 
     footer{
-      margin-top: 18px;
+      margin-top:18px;
+      text-align:center;
       color: var(--muted);
       font-size: 12.5px;
-      text-align:center;
       opacity:.85;
     }
   </style>
@@ -193,102 +154,59 @@
 
 <body>
   <main class="wrap">
-    <div class="topbar">
-      <div class="badge"><span class="dot" aria-hidden="true"></span>Academic homepage</div>
-      <div class="badge">Last updated: <span id="lastUpdated">2026-02-22</span></div>
-    </div>
+    <section class="card">
+      <div class="inner">
+        <div class="header">
+          <div>
+            <h1>Jiahui Lv</h1>
+            <p class="subtitle">
+              Ph.D. student, School of Computer Science and Engineering, Beihang University (Beijing, China).
+              I work on computer vision, with interests spanning detection, multimodal LLMs, and spike-guided deblurring.
+            </p>
 
-    <section class="grid">
-      <!-- Left: Bio -->
-      <article class="card">
-        <div class="inner">
-          <h1>Jiahui Lv</h1>
-          <p class="subtitle">
-            Ph.D. student, School of Computer Science and Engineering, Beihang University (Beijing, China)
-          </p>
+            <div class="meta">
+              <span class="pill"><strong>Email</strong> <a class="k" href="mailto:YOUR_OPENREVIEW_EMAIL">YOUR_OPENREVIEW_EMAIL</a></span>
+              <span class="pill"><strong>Affiliation</strong> <span class="k">Beihang University</span></span>
+              <span class="pill"><strong>Location</strong> <span class="k">Beijing, CN</span></span>
+            </div>
+          </div>
 
-          <p style="margin:0;color:var(--muted)">
-            Research interests: spike/event-based vision, motion deblurring and image restoration,
-            temporal feature fusion, and computational imaging.
-          </p>
-
-          <div class="row" style="margin-top:14px">
-            <span class="pill"><strong>Email</strong>&nbsp;
-              <a class="k" href="mailto:YOUR_OPENREVIEW_EMAIL">YOUR_OPENREVIEW_EMAIL</a>
-            </span>
-            <a class="pill" href="https://github.com/YOUR_GITHUB_USERNAME"><strong>GitHub</strong>&nbsp;<span class="k">/YOUR_GITHUB_USERNAME</span></a>
-            <a class="pill" href="#"><strong>CV</strong>&nbsp;<span class="k">pdf</span></a>
-            <a class="pill" href="#"><strong>Google Scholar</strong>&nbsp;<span class="k">link</span></a>
+          <div class="meta" style="justify-content:flex-end">
+            <a class="pill" href="https://github.com/YOUR_GITHUB_USERNAME"><strong>GitHub</strong> <span class="k">/YOUR_GITHUB_USERNAME</span></a>
+            <a class="pill" href="#" title="Optional"><strong>Google Scholar</strong> <span class="k">link</span></a>
           </div>
         </div>
 
-        <div class="section-title">
-          <span>Education</span>
-          <span class="k">buaa.edu.cn</span>
-        </div>
-        <div class="inner tight">
-          <ul>
-            <li><b>Ph.D.</b>, Computer Science and Engineering, Beihang University (2025–present)</li>
-            <li><b>B.S.</b>, Computer Science and Technology, Beihang University (2021–2025)</li>
-          </ul>
-        </div>
-      </article>
+        <div class="sep"></div>
 
-      <!-- Right: Highlights -->
-      <aside class="card">
-        <div class="section-title"><span>Highlights</span><span class="k">focus</span></div>
-        <div class="inner tight">
-          <ul>
-            <li>Spike-guided motion deblurring</li>
-            <li>Reliability-aware temporal fusion</li>
-            <li>Structure-aware guidance under sparse evidence</li>
-          </ul>
-        </div>
-
-        <div class="section-title"><span>Links</span><span class="k">profiles</span></div>
-        <div class="inner tight">
-          <ul>
-            <li><a href="https://github.com/YOUR_GITHUB_USERNAME">GitHub</a></li>
-            <li><a href="#">Google Scholar</a></li>
-            <li><a href="#">ORCID</a></li>
-            <li><a href="#">DBLP</a></li>
-          </ul>
-        </div>
-
-        <div class="section-title"><span>Contact</span><span class="k">public</span></div>
-        <div class="inner tight">
-          <div style="color:var(--muted)">
-            Beijing, China<br />
-            <a href="mailto:YOUR_OPENREVIEW_EMAIL">YOUR_OPENREVIEW_EMAIL</a>
+        <div class="grid">
+          <div class="box">
+            <h2>Research Interests</h2>
+            <ul>
+              <li>Object detection and robust recognition</li>
+              <li>Multimodal large language models (vision-language)</li>
+              <li>Spike / event-based vision and motion deblurring</li>
+            </ul>
           </div>
-        </div>
-      </aside>
-    </section>
 
-    <!-- Publications -->
-    <section class="card" style="margin-top:18px">
-      <div class="section-title"><span>Selected publication</span><span class="k">preprint</span></div>
-      <div class="pub">
-        <div class="title">Spike-Guided Motion Deblurring with Reliability-Aware Temporal Fusion</div>
-        <div class="meta">Under review (ECCV 2026).</div>
-        <div class="links">
-          <a class="k" href="#">paper</a>
-          <a class="k" href="#">code</a>
-          <a class="k" href="#">supp</a>
+          <div class="box">
+            <h2>Background</h2>
+            <ul>
+              <li><b>Ph.D.</b>, Beihang University (2025–present)</li>
+              <li><b>B.S.</b>, Beihang University (2021–2025)</li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
 
     <footer>
-      © <span id="year"></span> Jiahui Lv · Minimal academic page
+      © <span id="y"></span> Jiahui Lv
     </footer>
   </main>
 
   <script>
-    // Keep tiny, optional bits (safe if JS is disabled)
-    document.getElementById("year").textContent = new Date().getFullYear();
-    // If you prefer a manual date, just delete this line and set the text above.
-    document.getElementById("lastUpdated").textContent = new Date().toISOString().slice(0,10);
+    document.getElementById("y").textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
